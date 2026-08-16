@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clearing — Life & Career Coaching</title>
+<meta name="description" content="One-on-one coaching for clarity, self-awareness, and career direction. Book a free 30-minute session.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #16211d;
+    --ink-soft: #3d4d47;
+    --paper: #f4f1ea;
+    --paper-dim: #eae5da;
+    --mist: #c9d6cf;
+    --forest: #2f5d50;
+    --forest-deep: #1f4238;
+    --gold: #c69a5b;
+    --gold-soft: #e3cd9f;
+    --line: rgba(22,33,29,0.12);
+    --max: 1120px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--forest);
+  }
+
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,241,234,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-size:1.35rem;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .brand em{font-style:italic; color:var(--forest);}
+  .nav-links{display:flex; align-items:center; gap:28px; font-size:0.92rem;}
+  .nav-links a{text-decoration:none; color:var(--ink-soft); transition:color .2s;}
+  .nav-links a:hover{color:var(--forest);}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px;
+    border-radius:100px;
+    font-size:0.92rem;
+    font-weight:500;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--forest); color:var(--paper);}
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(47,93,80,0.28);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+  .btn-sm{padding:9px 16px; font-size:0.82rem;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:96px 0 88px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .rings{
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .rings svg{width:100%; height:100%;}
+  .ring{
+    fill:none;
+    stroke:var(--forest);
+    animation:sharpen 2.6s ease-out forwards;
+  }
+  .ring.r1{stroke-width:1; opacity:0.25; filter:blur(6px); animation-delay:0s;}
+  .ring.r2{stroke-width:1; opacity:0.35; filter:blur(6px); animation-delay:.15s;}
+  .ring.r3{stroke-width:1.4; opacity:0.55; filter:blur(6px); animation-delay:.3s;}
+  .ring.r4{stroke:var(--gold); stroke-width:2; opacity:0.9; filter:blur(6px); animation-delay:.45s;}
+  .core{
+    fill:var(--forest);
+    opacity:0;
+    animation:appear 1s ease-out .9s forwards;
+  }
+  @keyframes sharpen{
+    to{filter:blur(0px);}
+  }
+  @keyframes appear{
+    to{opacity:1;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ring, .core{animation:none !important; filter:none !important; opacity:1 !important;}
+  }
+
+  .hero h1{
+    font-size:clamp(2.3rem, 4.4vw, 3.5rem);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    margin:14px 0 22px;
+  }
+  .hero h1 em{font-style:italic; color:var(--forest);}
+  .hero p.lead{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:26px;}
+  .hero-note{
+    font-size:0.85rem; color:var(--ink-soft);
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  /* SECTION shared */
+  section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.7rem, 2.6vw, 2.3rem); margin-top:12px; letter-spacing:-0.01em;}
+  .section-head p{color:var(--ink-soft); margin-top:14px; font-size:1.02rem;}
+
+  /* ABOUT */
+  .about{
+    background:var(--forest-deep);
+    color:var(--paper);
+    border-radius:28px;
+    margin:0 20px;
+    padding:72px 0;
+  }
+  .about .wrap{max-width:calc(var(--max) - 40px);}
+  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center;}
+  .about .eyebrow{color:var(--gold-soft);}
+  .about h2{color:var(--paper); font-size:clamp(1.6rem,2.4vw,2.1rem); margin:12px 0 20px;}
+  .about p{color:rgba(244,241,234,0.82); font-size:1.02rem; margin-bottom:16px;}
+  .portrait{
+    aspect-ratio:4/5;
+    border-radius:20px;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(230,205,159,0.35), transparent 55%),
+      linear-gradient(155deg, #33544a, #16241f);
+    position:relative;
+    display:flex; align-items:flex-end; padding:22px;
+    border:1px solid rgba(244,241,234,0.14);
+  }
+  .portrait span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--gold-soft);
+    letter-spacing:0.04em;
+  }
+
+  /* SERVICES */
+  .cards-2{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .card{
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:36px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 16px 30px rgba(22,33,29,0.08);}
+  .card .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--gold);
+    display:block;
+    margin-bottom:18px;
+  }
+  .card h3{font-size:1.3rem; margin-bottom:12px;}
+  .card p{color:var(--ink-soft); font-size:0.98rem; margin-bottom:18px;}
+  .card ul{margin:0; padding:0; list-style:none;}
+  .card li{
+    padding:9px 0;
+    border-top:1px solid var(--line);
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+  .card li:first-child{border-top:none;}
+
+  /* HOW IT WORKS */
+  .steps{display:grid; grid-template-columns:repeat(3, 1fr); gap:0; position:relative;}
+  .step{
+    padding:0 26px 0 0;
+    border-left:1px solid var(--line);
+    padding-left:26px;
+  }
+  .step:first-child{border-left:none; padding-left:0;}
+  .step .num{
+    font-family:'Fraunces', serif;
+    font-size:2.1rem;
+    color:var(--gold);
+    display:block;
+    margin-bottom:14px;
+    font-weight:500;
+  }
+  .step h3{font-size:1.1rem; margin-bottom:10px;}
+  .step p{color:var(--ink-soft); font-size:0.94rem;}
+
+  /* COMMUNITY */
+  .community{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .comm-card{
+    border-radius:20px;
+    padding:34px;
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+    text-decoration:none;
+    display:block;
+    transition:transform .2s ease;
+  }
+  .comm-card:hover{transform:translateY(-3px);}
+  .comm-card.wa{background:linear-gradient(155deg, #2f5d50, #16241f);}
+  .comm-card.ig{background:linear-gradient(155deg, #6b4a2e, #2b1d12);}
+  .comm-card h3{color:var(--paper); font-size:1.25rem; margin-bottom:8px;}
+  .comm-card p{color:rgba(244,241,234,0.78); font-size:0.94rem; margin-bottom:22px;}
+  .comm-arrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    display:inline-flex; align-items:center; gap:8px;
+    color:var(--gold-soft);
+  }
+
+  /* FINAL CTA */
+  .cta-final{
+    text-align:center;
+    padding:96px 0 110px;
+  }
+  .cta-final h2{font-size:clamp(1.9rem,3.4vw,2.6rem); max-width:20ch; margin:0 auto 20px;}
+  .cta-final p{color:var(--ink-soft); max-width:48ch; margin:0 auto 34px;}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:40px 0;
+  }
+  .foot-row{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+    font-size:0.86rem; color:var(--ink-soft);
+  }
+  .foot-links{display:flex; gap:20px;}
+  .foot-links a{text-decoration:none; color:var(--ink-soft);}
+  .foot-links a:hover{color:var(--forest);}
+
+  @media (max-width: 860px){
+    .hero-grid{grid-template-columns:1fr; gap:36px;}
+    .hero{padding:56px 0 60px;}
+    .rings{max-width:260px; margin:0 auto;}
+    .about-grid{grid-template-columns:1fr;}
+    .about{margin:0 12px; padding:48px 0;}
+    .cards-2{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr; gap:28px;}
+    .step{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:24px;}
+    .step:first-child{border-top:none; padding-top:0;}
+    .community{grid-template-columns:1fr;}
+    .nav-links{gap:16px;}
+    .nav-links .nav-only-desktop{display:none;}
+    section{padding:60px 0;}
+  }
+
+  :focus-visible{outline:2px solid var(--forest); outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">Clear<em>ing</em></div>
+    <div class="nav-links">
+      <a href="#about" class="nav-only-desktop">About</a>
+      <a href="#services" class="nav-only-desktop">Services</a>
+      <a href="#community" class="nav-only-desktop">Community</a>
+      <a href="#book" class="btn btn-primary btn-sm">Book a free call</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Life &amp; career coaching</span>
+        <h1>Find the clarity <em>you've been circling around.</em></h1>
+        <p class="lead">One-on-one coaching to help you cut through the noise, understand what you actually want, and take the next honest step in your career and your life.</p>
+        <div class="hero-ctas">
+          <a href="#book" class="btn btn-primary">Book a free 30-min session</a>
+          <a href="#community" class="btn btn-ghost">Join the community</a>
+        </div>
+        <div class="hero-note">No pitch, no pressure — just a real conversation.</div>
+      </div>
+      <div class="rings" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <circle class="ring r1" cx="200" cy="200" r="180"/>
+          <circle class="ring r2" cx="200" cy="200" r="140"/>
+          <circle class="ring r3" cx="200" cy="200" r="100"/>
+          <circle class="ring r4" cx="200" cy="200" r="62"/>
+          <circle class="core" cx="200" cy="200" r="10"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="portrait"><span>Your coach</span></div>
+      <div>
+        <span class="eyebrow">Why this work</span>
+        <h2>I help people stop guessing about their own next move.</h2>
+        <p>Most of us aren't stuck because we lack options — we're stuck because we've lost the thread on what we actually want. My work is to help you find that thread again: through structured conversation, honest reflection, and a bit of accountability.</p>
+        <p>Whether you're rethinking your career, sitting with a big decision, or just feeling foggy about your own direction, we start from where you actually are — not where you think you should be.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Services</span>
+        <h2>Two ways to work together</h2>
+        <p>Both start the same way — with a free, no-obligation session to see if we're a fit.</p>
+      </div>
+      <div class="cards-2">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>Life Coaching</h3>
+          <p>For clarity, self-awareness, and getting unstuck in how you think, decide, and live.</p>
+          <ul>
+            <li>Weekly or biweekly 1:1 sessions</li>
+            <li>Values &amp; self-awareness work</li>
+            <li>Support between sessions on WhatsApp</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Career Mentorship</h3>
+          <p>For direction, decision-making, and momentum in your career or business path.</p>
+          <ul>
+            <li>Goal-setting &amp; accountability</li>
+            <li>Career transitions &amp; hard decisions</li>
+            <li>Practical next-step planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="book">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>Getting started takes one step</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">1</span>
+          <h3>Book your free session</h3>
+          <p>Grab a slot for a free, 30-minute video call — no prep needed, just show up as you are.</p>
+          <a href="#" class="btn btn-primary btn-sm" style="margin-top:18px;">Book now →</a>
+        </div>
+        <div class="step">
+          <span class="num">2</span>
+          <h3>We talk it through</h3>
+          <p>We'll talk about where you're at, what's foggy, and whether ongoing coaching makes sense for you.</p>
+        </div>
+        <div class="step">
+          <span class="num">3</span>
+          <h3>You decide what's next</h3>
+          <p>No pressure to continue. If it's a fit, we'll set up a plan that matches your pace and goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Stay close</span>
+        <h2>Join the community</h2>
+        <p>Free spaces to stay connected between sessions — no booking required.</p>
+      </div>
+      <div class="community">
+        <a href="#" class="comm-card wa">
+          <h3>WhatsApp Community</h3>
+          <p>Weekly prompts, quick check-ins, and a space to think out loud with others doing this work.</p>
+          <span class="comm-arrow">Join on WhatsApp →</span>
+        </a>
+        <a href="#" class="comm-card ig">
+          <h3>Instagram</h3>
+          <p>Reflections, reminders, and behind-the-scenes of the coaching work — day to day.</p>
+          <span class="comm-arrow">Follow @yourhandle →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-final">
+    <div class="wrap">
+      <span class="eyebrow">Ready when you are</span>
+      <h2>Your next 30 minutes could change your next year.</h2>
+      <p>No cost, no commitment — just a real conversation about where you're at and where you want to go.</p>
+      <a href="#" class="btn btn-primary">Book your free session</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>© 2026 Clearing Coaching. All rights reserved.</div>
+    <div class="foot-links">
+      <a href="#">WhatsApp</a>
+      <a href="#">Instagram</a>
+      <a href="mailto:hello@example.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
